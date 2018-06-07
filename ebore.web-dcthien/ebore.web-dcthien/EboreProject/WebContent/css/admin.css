@@ -1,0 +1,174 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 40px 60px  1fr;
+    grid-template-areas:
+        "dashboard header"
+        "dashboard tool"
+        "dashboard mana";   
+}
+
+/*
+================== style for DASHBOARD ================
+*/
+.dashboard {
+    grid-area: dashboard;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+.ava {
+    width: 90%;
+    margin: 20px auto;
+}
+.ava>img {
+    width: 250px;
+    height: auto;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.ava>h3 {
+    margin: 15px auto;
+    font-family: fontTitle;
+    color: #333;
+}
+
+/* ========= CONTENT OF DASHBOARD ======== */
+.overview, .userMag, .authorMag, .novelMag {
+    width: 250px;
+    height: 80px;
+    margin: 25px auto;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.overview>h4, .userMag>h4, .authorMag>h4, .novelMag>h4 {
+    line-height: 80px;
+    font-family: fontText;
+    color: #333;
+}
+.overview:hover, .userMag:hover, .authorMag:hover, .novelMag:hover {
+    width: 270px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+================== style for HEADER ================
+*/
+.header {
+    grid-area: header;
+    width: 100%;
+    background-color: #ffa500;
+    border-top-left-radius: 11px;
+    display: inline;
+
+}
+.header>ul {
+    margin: 0;
+}
+.header ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 40px;
+    margin: auto 200px;
+    font-family: fontTitle;
+    color: #333;
+    font-size: 21px;
+    text-align: center;
+}
+
+/*
+================== style for TOOL ================
+*/
+.tool {
+    grid-area: tool;
+    width: 100%;
+    border-bottom-left-radius: 11px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tool> ul {
+    margin: auto;
+}
+.tool ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 60px;
+    margin: auto 80px;
+    padding: 0 15px;
+    font-family: fontTitle;
+    color: #333;
+    font-size: 17px;
+    text-align: center;
+}
+
+/*
+================== style for MANA ================
+*/
+.mana {
+    grid-area: mana;
+    width: 97%;
+    height: calc(100vh - 115px);
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes shake {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+
+/*
+================================= FONT FACE ============================
+*/
+@font-face {
+    font-family: fontLink;
+    src: url("font/SanFranciscoText-Medium.otf");
+}
+@font-face {
+    font-family: fontText;
+    src: url("font/SanFranciscoText-Light.otf");
+}
+@font-face {
+    font-family: fontTitle;
+    src: url("font/SanFranciscoDisplay-Regular.otf");
+}

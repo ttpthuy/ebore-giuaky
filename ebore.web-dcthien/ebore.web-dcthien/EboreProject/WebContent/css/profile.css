@@ -1,0 +1,231 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 100vw;
+    margin: 0 auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr 300px ;
+    grid-template-rows: 600px 1fr;
+    grid-template-areas:
+        "cover cover cover cover"
+        "infor descript descript file";
+}
+
+
+/* ************STYLE FOR COVER************** */
+.cover {
+    grid-area: cover;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-image: url("img/profile/index4.jpg");
+    background-size: 1366px 600px;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.avatar {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto 0;
+}
+.ava {
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    max-width: 400px;
+    height: auto;
+    max-height: 400px;
+    border-radius: 19px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.9;
+}
+.pseudonym {
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    font-weight: bold;;
+    transform: rotate(-7deg);
+}
+
+
+
+
+
+/* ************STYLE FOR INFOR************** */
+.infor {
+    grid-area: infor;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.infor>h2 {
+    font-family: fontTitle;
+    margin: 40px auto 10px;
+    font-size: 19px;
+    color: #ffa500;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 11px;
+    border: 1px solid #ffa500;
+    border-bottom: 2px solid #ffa500;
+}
+.infor>h2:hover {
+    border: none;
+}
+.tabl {
+    width: 250px;
+    margin-top: 50px;
+    margin-left: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 11px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    padding: 8px;
+    text-align: left;
+    font-family: fontText;
+}
+td:nth-child(even){
+    text-align: center;
+}
+
+/* ************STYLE FOR DESCRIPT************** */
+.descript {
+    grid-area: descript;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.descript>h2 {
+    font-family: fontTitle;
+    margin: 40px auto 10px;
+    font-size: 19px;
+    color: #ffa500;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 11px;
+    border: 1px solid #ffa500;
+    border-bottom: 2px solid #ffa500;
+}
+.descript>h2:hover {
+    border: none;
+}
+.descript>p {
+    font-family: fontText;
+    font-size: 23px;
+    color: #333;
+    text-align: justify;
+    width: 500px;
+    margin: 50px auto 20px;
+    letter-spacing: 1px;
+}
+/* ************STYLE FOR FILE************** */
+.file {
+    grid-area: file;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 40px;
+}
+.file>h3 {
+    font-family: fontText;
+    margin-top: 40px;
+    font-size: 19px;
+    color: #333;
+}
+.work {
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+    border-radius: 11px;
+    background-color: rgb(76, 217, 100);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.work>h3{
+    font-family: fontText;
+    font-size: 27px;
+    line-height: 100px;
+    color: #fff;
+}
+.work:hover {
+    animation: shake 0.2s ease-in-out infinite;
+}
+.read {
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+    border-radius: 11px;
+    background-color: rgb(0, 122, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.read>h3{
+    font-family: fontText;
+    font-size: 27px;
+    line-height: 100px;
+    color: #fff;
+}
+.read:hover {
+    animation: shake 0.2s ease-in-out infinite;
+}
+.folow {
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+    border-radius: 11px;
+    background-color: rgb(255, 59, 48);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.folow>h3{
+    font-family: fontText;
+    font-size: 27px;
+    line-height: 100px;
+    color: #fff;
+}
+.folow:hover {
+     animation: shake 0.2s ease-in-out infinite;
+}
+                                                        
+
+@keyframes shake {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+
+
+/*
+================================= FONT FACE ============================
+*/
+@font-face {
+    font-family: fontLink;
+    src: url("font/SanFranciscoText-Medium.otf");
+}
+@font-face {
+    font-family: fontText;
+    src: url("font/SanFranciscoText-Light.otf");
+}
+@font-face {
+    font-family: fontTitle;
+    src: url("font/SanFranciscoDisplay-Regular.otf");
+}
+
