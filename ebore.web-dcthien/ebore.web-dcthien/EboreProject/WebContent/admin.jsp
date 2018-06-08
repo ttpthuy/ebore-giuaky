@@ -4,7 +4,7 @@
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-16">
 <title>ADMIN | EBORE</title>
 <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
 <link type="text/css" rel="stylesheet" href="css/admin.css">
@@ -21,6 +21,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<% String newName = (String) session.getAttribute("name") ;
+	if(newName == null)
+		newName= "rong";
+%>
 	<div class="wrapper">
 		<div class="grid">
 			<div class="dashboard">

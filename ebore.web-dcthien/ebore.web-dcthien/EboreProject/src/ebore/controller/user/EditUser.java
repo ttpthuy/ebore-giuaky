@@ -1,4 +1,4 @@
-package ebore.controller;
+package ebore.controller.user;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,19 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginSuccess
+ * Servlet implementation class ditUser
  */
-@WebServlet("/LoginSuccess")
-public class LoginSuccess extends HttpServlet {
+@WebServlet("/editUser")
+public class EditUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginSuccess() {
+    public EditUser() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,18 +27,7 @@ public class LoginSuccess extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		HttpSession session = request.getSession();
-		String name = (String) session.getAttribute("name");
-		if (name == null) {
-			response.sendRedirect("LoginHandling");
-		} else {
-			String newName = "Mr. " + name;
-			request.setAttribute("name", newName);
-			System.out.println(newName);
-			request.getRequestDispatcher("admin.jsp").forward(request, response);
-		}
-
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

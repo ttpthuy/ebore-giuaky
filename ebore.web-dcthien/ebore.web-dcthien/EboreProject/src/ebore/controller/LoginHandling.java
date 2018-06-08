@@ -30,9 +30,6 @@ public class LoginHandling extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("name");
 		if	(name == null) {
@@ -43,13 +40,7 @@ public class LoginHandling extends HttpServlet {
 	
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String errorMessage = null;
@@ -77,12 +68,12 @@ public class LoginHandling extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("name", username);
 				response.sendRedirect("LoginSuccess");
-			} else {
+			}  
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-			}
+			
 			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + " login handle");
 		}
 		request.setAttribute("errorMessage", errorMessage);
 		return;
