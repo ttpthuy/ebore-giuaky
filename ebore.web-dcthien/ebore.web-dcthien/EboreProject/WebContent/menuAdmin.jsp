@@ -39,8 +39,8 @@
                 <li class="menuS">
                     <ul>
                         <li>
-                            <a href="" onlick>
-                                <h4>Overview</h4>
+                            <a href="ortherManage.jsp" onlick>
+                                <h4>Order</h4>
                             </a>
                         </li>
                         <li>
@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" onlick>
+                            <a href="novelManage.jsp" onlick>
                                 <h4>Novel</h4>
                             </a>
                         </li>

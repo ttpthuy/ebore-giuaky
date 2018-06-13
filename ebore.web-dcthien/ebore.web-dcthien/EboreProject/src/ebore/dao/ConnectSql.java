@@ -16,7 +16,8 @@ public class ConnectSql {
 //		String url = "jdbc:sqlserver://ban-hang-giua-ky.database.windows.net:1433;database=ban-hang;user=thuytran@ban-hang-giua-ky;password={Ttpthuy791997};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 //		String url = "jdbc:sqlserver://THUYTRAN:1189;" + "databaseName=Ebore;integratedSecurity=True";
 //		String url = "jdbc:sqlserver://alienchat.database.windows.net:1433;database=ebore;user=alienbot@alienchat;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30";
-		String url = "jdbc:sqlserver://ebore-giuaky-server.database.windows.net:1433;database=theebore;user=ebore@ebore-giuaky-server;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+//		String url = "jdbc:sqlserver://ebore-giuaky-server.database.windows.net:1433;database=theebore;user=ebore@ebore-giuaky-server;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+		String url = "jdbc:sqlserver://ebore-giuaky-server.database.windows.net:1433;database=theebore;user=ebore@ebore-giuaky-server;password={Ttpthuy791997};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 		try {
 		Class.forName(driver);
 		connection = DriverManager.getConnection(url);
@@ -52,11 +53,11 @@ public class ConnectSql {
 		ResultSet rs=	stmt.executeQuery(sql);
 		return rs;
 	}
-	public static void main(String[] args) throws Exception {
-		ConnectSql connect = new ConnectSql();
-		System.out.println(connect.connection);
-		
-		
-		
-	}
+//	public static void main(String[] args) throws Exception {
+//		ConnectSql connect = new ConnectSql();
+//		System.out.println(connect.connection);
+//		
+//		
+//		
+//	}
 }
