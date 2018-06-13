@@ -40,8 +40,12 @@ public class DeleteUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String customerID = request.getParameter("customerID");
 		System.out.println(customerID);
-//		User u = UserDAO.lookUp(customerID);
-		UserDAO.deleteUser(customerID);
+		User u = UserDAO.lookUp(customerID);
+		UserDAO dao = new UserDAO();
+		dao.delete(customerID);
+//		User.deleteUser(customerID);
+		UserDAO.mapUser.remove(u.getUsername(),u);
+		System.out.println(UserDAO.mapUser);
 		getServletContext().getRequestDispatcher("/userManage.jsp").forward(request, response);
 	}
 

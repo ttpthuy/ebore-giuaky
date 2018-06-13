@@ -30,7 +30,7 @@
 }
 .avatar {
     width: 400px;
-    height: 400px;
+    height: 300px;
     margin: 50px auto 0;
 }
 .ava {
@@ -46,10 +46,10 @@
 }
 .pseudonym {
     margin: 0 auto;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: fontAuthor;
     font-size: 23px;
     font-weight: bold;;
-    transform: rotate(-7deg);
+    transform: rotate(-5deg);
 }
 
 
@@ -228,4 +228,7 @@ td:nth-child(even){
     font-family: fontTitle;
     src: url("font/SanFranciscoDisplay-Regular.otf");
 }
-
+@font-face {
+	font-family: fontAuthor;
+	src: url("font/Countryside Personal Use.ttf");
+}

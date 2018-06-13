@@ -37,7 +37,7 @@
                     <div class="loginIndex">
                         <div class="form">
                             <h2>LOGIN</h2>
-                            <form action="LoginHandling" method="POST" class="loginForm">
+                            <form action="LoginHanding" method="POST" class="loginForm">
                                 <div class="form-content">
                                 <%
                                 	String error = (String) request.getAttribute("errorMessage");

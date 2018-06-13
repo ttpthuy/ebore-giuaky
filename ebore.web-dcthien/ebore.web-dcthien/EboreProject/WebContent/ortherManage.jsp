@@ -1,4 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page import="java.util.List"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="ebore.dao.ConnectSql"%>
+<%@page import="ebore.dao.OrderDAO"%>
+<%@page import=" java.util.Map"%>
+<%@page import="ebore.model.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+	Map<String, Order> mapListOrder = OrderDAO.mapOrder;
+%>
+
 <html>
 
 
@@ -7,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ADMIN | EBORE</title>
 <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
-<link type="text/css" rel="stylesheet" href="css/admin.css">
+<link type="text/css" rel="stylesheet" href="css/admintest.css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,9 +39,6 @@
 			<div class="mana">
 
 				<!-- COPY -->
-				<!-- E  D  I  T  
-				     H  E  R  E -->
-				
 				<div class="dataTable_wrapper">
 					<div id="dataTables-example_wrapper"
 						class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -68,56 +76,75 @@
 											<th class="sorting_asc" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-sort="ascending"
-												aria-label="STT: activate to sort column descending"
-												style="width: 96px;">STT</th>
+												aria-label="idOrther: activate to sort column descending"
+												style="width: 96px;">ID Orther</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Mã sách: activate to sort column ascending"
-												style="width: 150px;">Mã sách</th>
+												aria-label="idStory: activate to sort column ascending"
+												style="width: 150px;">ID Story</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Tên sách: activate to sort column ascending"
-												style="width: 277px;">Tên sách</th>
+												aria-label="idUser: activate to sort column ascending"
+												style="width: 277px;">ID User</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Giá sách: activate to sort column ascending"
-												style="width: 156px;">Giá sách</th>
+												aria-label="Date: activate to sort column ascending"
+												style="width: 156px;">Date</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Tác Giả</th>
+												aria-label="delete: activate to sort column ascending"
+												style="width: 141px;">Delete</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="edit: activate to sort column ascending"
+												style="width: 141px;">Edit</th>
 										</tr>
 									</thead>
 									<tbody>
+								<%
+								List<Order> list = OrderList.getAllOrder();
+								for(Order order : list){
+								%>
+										<tr>
+											<td><%=order.getIdOrder().trim()%></td>
+											<td><%=order.getIdStory().trim()%></td>
+											<td><%=order.getIdUser().trim()%></td>
+											<td><%=order.getDate()%></td>
 
-										<tr class="gradeX odd" role="row">
-											<td class="sorting_1">1</td>
-											<td>s1</td>
-											<td>Tuổi trẻ đáng giá bao</td>
-											<td class="center">70000</td>
-											<td class="center">B</td>
+<!--											<td><a href="DeleteOrder">
+													<button type="button" class="btn btn-sm btn-danger" id=""
+														aria-label="Right Align">
+														<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+													</button>
+											</a></td>
+-->	
+											
+											<td>
+												<form action="DeleteOrder" method="post">
+													<p data-placement="top" data-toggle="tooltip"
+														title="Delete">
+														<input type="hidden" name="orderId"
+															value="<%=order.getIdOrder()%>">
+														<button class="btn btn-danger btn-xs" data-title="Delete"
+															data-toggle="modal" data-target="#delete">
+															<span class="glyphicon glyphicon-trash"></span>
+														</button>
+													</p>
+												</form>
+											</td>
+											
+											
+											
+											<td><a href=#><button type="button"
+														class="btn  btn-sm btn-warning" aria-label="Right Align">
+														<span class="glyphicon glyphicon-edit"></span>
+													</button></a></td>
 										</tr>
-										<tr class="gradeA even" role="row">
-											<td class="sorting_1">2</td>
-											<td>s3</td>
-											<td>Trở về nơi hoang dã</td>
-											<td class="center">60000</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA odd" role="row">
-											<td class="sorting_1">3</td>
-											<td>s4</td>
-											<td>Có phải anh</td>
-											<td class="center">60000</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeC even" role="row">
-											<td class="sorting_1">4</td>
-											<td>s2</td>
-											<td>Đời mưa gió</td>
-											<td class="center">40000</td>
-											<td class="center">C</td>
-										</tr>
+
+										<%
+											}
+										%>
+
 									</tbody>
 								</table>
 							</div>

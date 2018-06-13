@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/admin.jsp=UTF-8
-encoding//WebContent/userManage.jsp=UTF-8
+encoding//WebContent/admintest.jsp=UTF-8
+encoding//WebContent/commentManage.jsp=UTF-8
+encoding//WebContent/menuAdmin.jsp=UTF-8
+encoding//WebContent/ortherManage.jsp=UTF-8

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ADMIN | EBORE</title>
 <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
-<link type="text/css" rel="stylesheet" href="css/admin.css">
+<link type="text/css" rel="stylesheet" href="css/admintest.css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,9 +28,6 @@
 			<div class="mana">
 
 				<!-- COPY -->
-				<!-- E  D  I  T  
-				     H  E  R  E -->
-				
 				<div class="dataTable_wrapper">
 					<div id="dataTables-example_wrapper"
 						class="dataTables_wrapper form-inline dt-bootstrap no-footer">

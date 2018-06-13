@@ -1,10 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page import="ebore.model.NovelList"%>
+<%@page import="java.util.List"%>
+<%@page import="ebore.model.Novel"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.Collection"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="ebore.dao.NovelDao"%>
 <html>
-
-
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>ADMIN | EBORE</title>
 <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
 <link type="text/css" rel="stylesheet" href="css/admin.css">
@@ -19,6 +27,9 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 </head>
 <body>
 	<header> <jsp:include page="menuAdmin.jsp" /> </header>
@@ -30,12 +41,12 @@
 				<!-- COPY -->
 				<!-- E  D  I  T  
 				     H  E  R  E -->
-				
+
 				<div class="dataTable_wrapper">
 					<div id="dataTables-example_wrapper"
 						class="dataTables_wrapper form-inline dt-bootstrap no-footer">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-3">
 								<div class="dataTables_length" id="dataTables-example_length">
 									<label>Show <select name="dataTables-example_length"
 										aria-controls="dataTables-example"
@@ -48,7 +59,15 @@
 									</label>
 								</div>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-3">
+								<div id="dataTables-example_filter" class="dataTables_filter">
+									<button>
+										<a href="addNovel.jsp">THÊM SÁCH</a>
+									</button>
+								</div>
+							</div>
+
+							<div class="col-sm-3">
 								<div id="dataTables-example_filter" class="dataTables_filter">
 									<label>Search: <input type="search"
 										class="form-control input-sm" placeholder=""
@@ -85,39 +104,77 @@
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Thể loại</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
 												style="width: 141px;">Tác Giả</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Ngôn ngữ</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Mô tả</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Nội dung</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Sửa</th>
+											<th class="sorting" tabindex="0"
+												aria-controls="dataTables-example" rowspan="1" colspan="1"
+												aria-label="Tác Giả: activate to sort column ascending"
+												style="width: 141px;">Xóa</th>
 										</tr>
 									</thead>
 									<tbody>
+										<%
+											List<Novel> list = NovelList.getAllNovel();
+											for (Novel n : list) {
+										%>
 
 										<tr class="gradeX odd" role="row">
-											<td class="sorting_1">1</td>
-											<td>s1</td>
-											<td>Tuổi trẻ đáng giá bao</td>
-											<td class="center">70000</td>
-											<td class="center">B</td>
+											<td><%=n.getNovelCode()%></td>
+											<td><%=n.getNovelName()%></td>
+											<td><%=n.getNovelPrice()%></td>
+											<td><%=n.getNovelType()%></td>
+											<td><%=n.getNovelAuthor()%></td>
+											<td><%=n.getNovelLanguage()%></td>
+											<td><%=n.getNovelDescription()%></td>
+											<td><%=n.getNovelScontent()%></td>
+
+											<td class="center">
+												<div id="dataTables-example_filter"
+													class="dataTables_filter">
+													<button>
+														<a href="editNovel.jsp">SỬA</a>
+													</button>
+												</div>
+											</td>
+											<td class="center">
+												<!-- 												<form action="DeleteNovel" method="post"> -->
+												<!-- 													<input type="hidden" name="novelCode" -->
+												<%-- 	
+<%-- 	value=<%=NovelDao.getList().get(i).getNovelCode()%>> --%> <!-- 													<input type="submit" value="XÓA"> -->
+												<!-- 												</form> -->
+												<form action="DeleteNovel" method="post">
+													<input type="hidden" name="novelCode"
+														value=<%=n.getNovelCode()%>> <input type="submit"
+														class="btn btn-danger" value="Delete">
+												</form>
+
+											</td>
+
 										</tr>
-										<tr class="gradeA even" role="row">
-											<td class="sorting_1">2</td>
-											<td>s3</td>
-											<td>Trở về nơi hoang dã</td>
-											<td class="center">60000</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA odd" role="row">
-											<td class="sorting_1">3</td>
-											<td>s4</td>
-											<td>Có phải anh</td>
-											<td class="center">60000</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeC even" role="row">
-											<td class="sorting_1">4</td>
-											<td>s2</td>
-											<td>Đời mưa gió</td>
-											<td class="center">40000</td>
-											<td class="center">C</td>
-										</tr>
+
+										<%
+											}
+										%>
+
 									</tbody>
 								</table>
 							</div>
@@ -165,5 +222,6 @@
 		</div>
 	</div>
 	</main>
+
 </body>
 </html>

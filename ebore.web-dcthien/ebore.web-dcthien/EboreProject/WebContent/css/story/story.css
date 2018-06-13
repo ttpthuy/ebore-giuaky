@@ -1,0 +1,260 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+}
+.wrapper {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5px 50px 120px 1fr 1fr;
+    grid-template-areas: 
+        "pgrs"
+        "author"
+        "title"
+        "descript"
+        "comment";
+}
+
+
+
+
+/*
+=================== Style for Progress ==================
+*/
+.pgrs {
+    grid-area: pgrs;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #ffa500;
+}
+
+
+
+/*
+=================== Style for Author ==================
+*/
+.author {
+    grid-area: author;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 11px;
+}
+.author>h4 {
+    font-size: 14px;
+    font-family: fontLink;
+    color: rgb(112, 112, 112);
+    line-height: 50px;
+    width: 10%;
+    float: left;
+}
+.author>h2 {
+    font-size: 23px;
+    font-family: fontTitle;
+    color: #333;
+    line-height: 50px;
+    width: 40%;
+    float: left;
+}
+.author>h3 {
+    font-size: 14px;
+    font-family: fontLink;
+    line-height: 50px;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.author>h3 a {
+    color: #ffa500;
+    text-decoration: none;
+}
+
+
+
+/*
+=================== Style for Title ==================
+*/
+.title {
+    grid-area: title;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    margin: 15px auto 0;
+    padding: 0 auto;
+    border-radius: 11px;
+
+}
+.title>h2 {
+    font-size: 47px;
+    font-family: fontTitle;
+    height: 85%;
+    line-height: 102px;
+    text-align: left;
+    color: #ffa500;
+}
+.title .datePost {
+    font-size: 14px;
+    font-family: fontText;
+    height: 15%;
+    line-height: 18px;
+    text-align: left;
+}
+
+
+
+/*
+=================== Style for Descript ==================
+*/
+.descript {
+    grid-area: descript;
+    width: 100%;
+    text-align: center;
+    margin: 25px auto 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+.descript>p {
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+.descript>button {
+    border: none;
+    font-family: fontLink;
+    font-size: 21px;
+    color: #333;
+    width: 100%;
+    height: 40px;
+    border: 0.5px solid #ffa500;
+    background-color: transparent;
+    border-radius: 23px;
+}
+.descript>button:hover {
+    background-color: #ffa500;
+    animation: shake 0.2s ease-in-out infinite;
+    cursor: pointer;
+    
+}
+
+
+
+/*
+=================== Style for COMMENT ==================
+*/
+.comment {
+    grid-area: comment;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin: 25px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 17px;
+
+}
+.comment .commentItem {
+    width: 80%;
+    height: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 10px auto;
+    border-radius: 11px;
+}
+.comment .commentItem:hover {
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.comment .commentItem>h4 {
+    width: 20%;
+    float: left;
+    font-family: fontText;
+}
+.comment .commentItem>p {
+    width: 78%;
+    float: left;
+    text-align: left;
+    padding-bottom: 5px;
+    font-family: fontText;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        
+
+@keyframes shake {
+    0% {
+        transform: rotate(-0.5deg);
+    }
+    50% {
+        transform: rotate(0.5deg);
+    }
+    100% {
+        transform: rotate(-0.5deg);
+    }
+}
+
+
+
+/*
+================================= FONT FACE ============================
+*/
+@font-face {
+    font-family: fontLink;
+    src: url("../font/SanFranciscoText-Medium.otf");
+}
+@font-face {
+    font-family: fontText;
+    src: url("../font/SanFranciscoText-Light.otf");
+}
+@font-face {
+    font-family: fontTitle;
+    src: url("../font/SanFranciscoDisplay-Regular.otf");
+}
+

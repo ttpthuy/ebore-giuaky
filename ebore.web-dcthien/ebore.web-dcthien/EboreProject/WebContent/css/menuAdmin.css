@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.menu {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 10px auto;
+    background-color: whitesmoke;
+    position: fixed;
+}
+.menu>ul {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.menu>ul li {
+    list-style: none;
+    margin: 40px auto;
+}
+.menu>ul li a {
+    text-decoration: none;
+}
+.menu>ul li a img {
+    width: 250px;
+    height: auto;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.menu>ul li a h2 {
+    width: 250px;
+    height: 40px;
+    margin: 10px auto;
+    line-height: 40px;
+    font-family: fontTitle;
+    color: #333;
+}
+
+.menuS>ul {
+    text-align: center;
+    margin: 10px auto;
+}
+.menuS>ul li {
+    list-style: none;
+    width: 250px;
+    height: 80px;
+    margin: 15px auto;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.menuS>ul li a {
+    text-decoration: none;
+}
+.menuS>ul li a h4 {
+    font-family: fontText;
+    line-height: 80px;
+    color: #333;
+}
+
+
+
+
+
+
+
+/* Menu ngang */
+
+.navbar-fixed {
+    height: 40px;
+    width: 100vw;
+    background-color: whitesmoke;
+    position: relative;
+}
+.navbar-fixed nav {
+    position: fixed;
+    height: 40px;
+    line-height: 40px;
+}
+.navbar-fixed nav .nav-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+}
+.navbar-fixed .top-nav-left {
+    margin-left: 300px;
+    display: flex;
+    width: 100%;
+}
+.navbar-fixed .top-nav-left li {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    float: left;
+}
+.navbar-fixed .top-nav-left li h2{
+    width: calc(100vw - 450px);
+    padding: 0 20px;
+    font-family: fontTitle;
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+
+.navbar-fixed .top-nav-right {
+    margin-left: auto;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+.navbar-fixed .top-nav-right li {
+    list-style: none;
+    float: left;
+}
+.navbar-fixed .top-nav-right li h5 {
+    width: 100%;
+    padding: 0 10px;
+    font-family: fontTitle;
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+/*
+================================= FONT FACE ============================
+*/
+@font-face {
+    font-family: fontLink;
+    src: url("font/SanFranciscoText-Medium.otf");
+}
+@font-face {
+    font-family: fontText;
+    src: url("font/SanFranciscoText-Light.otf");
+}
+@font-face {
+    font-family: fontTitle;
+    src: url("font/SanFranciscoDisplay-Regular.otf");
+}

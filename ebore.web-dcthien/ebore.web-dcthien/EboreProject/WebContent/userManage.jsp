@@ -1,59 +1,38 @@
+<%@page import="java.util.Collection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="ebore.dao.UserDAO" %>
     <%@ page import="ebore.model.User" %>
-    <%@ page import="java.util.List" %>
+    <%@ page import="java.util.*" %>
+    <%@ page import="java.util.Map" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
+<link type="text/css" rel="stylesheet" href="css/admintest.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>User Management</title>
 </head>
 <body>
-	
-	<!-- MENU  -->
+	<header> <jsp:include page="menuAdmin.jsp" /> </header>
+	<main>
 	<div class="wrapper">
 		<div class="grid">
-			<div class="dashboard">
-				<div class="ava">
-					<img src="css/img/profile/avatar3.jpg">
-					<h3>Username Admin</h3>
-				</div>
-				<div class="overview">
-					<h4>Overview</h4>
-				</div>
-				<div class="userMag">
-					<h4>User management</h4>
-				</div>
-				<div class="authorMag">
-					<h4>Author management</h4>
-				</div>
-				<div class="novelMag">
-					<h4>Novel management</h4>
-				</div>
-			</div>
-			<div class="header">
-				<ul>
-					<li class="dn">Dashname</li>
-					<li class="btn">LOGOUT</li>
-				</ul>
-			</div>
-			<div class="tool">
-				<ul>
-					<li>Button1</li>
-					<li>Button2</li>
-				</ul>
-			</div>
-			</div>
-			</div>
-			
-			
-	<!-- COPY -->
+			<div class="mana">
+
+				<!-- COPY -->
 				<div class="dataTable_wrapper">
 					<div id="dataTables-example_wrapper"
 						class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -101,38 +80,29 @@
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Mã sách: activate to sort column ascending"
 												style="width: 150px;">pass</th>
-											<th class="sorting" tabindex="0"
-												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Mã sách: activate to sort column ascending"
-												style="width: 150px;">pass</th>
 											
 										</tr>
 									</thead>
-									<%
-										List<User> list = UserDAO.list;
-									for(int i = 0; i < list.size(); i++){
 									
+										<%
+										Collection list = UserDAO.mapUser.values();
+										Iterator<User> itr = list.iterator();
+										while (itr.hasNext()) {
+											
+											User p = itr.next();
 									%>
+									
 									<tbody>
 										<tr>
-										<td> <%=list.get(i).getUsername() %></td>
-										<td> <%=list.get(i).getPass() %></td>
-										
+										<td> <%=p.getUsername().trim() %></td>
+										<td> <%=p.getPass().trim() %></td>
 										<td>
-				<form action="editUser" method="get">
-					<input type="hidden" name="customerID"	value=<%=list.get(i).getUsername()%>>
-			 	 	<input type="submit" class ="btn btn-primary"  value="Edit">   
-			 	<!--  	<a href="/products" class="btn btn-primary" type="submit">Edit </a>-->
-				</form>
-		
-			</td>
-			<td>
-			<form action="deleteUser" method="post">
-					<input type="hidden" name="customerID"
-						value=<%=list.get(i).getUsername()%>>
-					<input type="submit" class ="btn btn-danger"  value="Delete">   
-				</form>
-			</td>
+											<form action="deleteUser" method="post">
+											<input type="hidden" name="customerID"
+											value=<%=p.getUsername().trim()%>>
+											<input type="submit" class ="btn btn-danger"  value="Delete">   
+										</form>
+										</td>
 									
 									</tr>	
 									<%} %>
@@ -143,9 +113,12 @@
 									</div>
 									</div>
 									</div>
-									</div>
-									
-			
+	</div>
+	</div>
+	</div>
+	</div>
+	</main>
+										
 	
 </body>
 </html>
