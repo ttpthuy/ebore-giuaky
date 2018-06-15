@@ -84,51 +84,47 @@
 									aria-describedby="dataTables-example_info">
 									<thead>
 										<tr role="row">
-											<th class="sorting_asc" tabindex="0"
-												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-sort="ascending"
-												aria-label="STT: activate to sort column descending"
-												style="width: 96px;">STT</th>
+
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Mã sách: activate to sort column ascending"
-												style="width: 150px;">Mã sách</th>
+												style="width: 150px;">ID STORY</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tên sách: activate to sort column ascending"
-												style="width: 277px;">Tên sách</th>
+												style="width: 277px;">TITLE</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Giá sách: activate to sort column ascending"
-												style="width: 156px;">Giá sách</th>
+												style="width: 156px;">PRICE</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Thể loại</th>
+												style="width: 141px;">TYPE</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Tác Giả</th>
+												style="width: 141px;">AUTHOR</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Ngôn ngữ</th>
+												style="width: 141px;">LANGUAGE</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Mô tả</th>
+												style="width: 141px;">DESCRIPTION</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="dataTables-example" rowspan="1" colspan="1"
 												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Nội dung</th>
-											<th class="sorting" tabindex="0"
-												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Sửa</th>
-											<th class="sorting" tabindex="0"
-												aria-controls="dataTables-example" rowspan="1" colspan="1"
-												aria-label="Tác Giả: activate to sort column ascending"
-												style="width: 141px;">Xóa</th>
+												style="width: 141px;">SCONTENT</th>
+											<!-- 											<th class="sorting" tabindex="0" -->
+											<!-- 												aria-controls="dataTables-example" rowspan="1" colspan="1" -->
+											<!-- 												aria-label="Tác Giả: activate to sort column ascending" -->
+											<!-- 												style="width: 141px;">Sửa</th> -->
+											<!-- 											<th class="sorting" tabindex="0" -->
+											<!-- 												aria-controls="dataTables-example" rowspan="1" colspan="1" -->
+											<!-- 												aria-label="Tác Giả: activate to sort column ascending" -->
+											<!-- 												style="width: 141px;">Xóa</th> -->
 										</tr>
 									</thead>
 									<tbody>
@@ -147,20 +143,15 @@
 											<td><%=n.getNovelDescription()%></td>
 											<td><%=n.getNovelScontent()%></td>
 
+											<!-- 											<td class="center"> -->
+											<!-- 												<div id="dataTables-example_filter" -->
+											<!-- 													class="dataTables_filter"> -->
+											<!-- 													<button> -->
+											<!-- 														<a href="editNovel.jsp">SỬA</a> -->
+											<!-- 													</button> -->
+											<!-- 												</div> -->
+											<!-- 											</td> -->
 											<td class="center">
-												<div id="dataTables-example_filter"
-													class="dataTables_filter">
-													<button>
-														<a href="editNovel.jsp">SỬA</a>
-													</button>
-												</div>
-											</td>
-											<td class="center">
-												<!-- 												<form action="DeleteNovel" method="post"> -->
-												<!-- 													<input type="hidden" name="novelCode" -->
-												<%-- 	
-<%-- 	value=<%=NovelDao.getList().get(i).getNovelCode()%>> --%> <!-- 													<input type="submit" value="XÓA"> -->
-												<!-- 												</form> -->
 												<form action="DeleteNovel" method="post">
 													<input type="hidden" name="novelCode"
 														value=<%=n.getNovelCode()%>> <input type="submit"
