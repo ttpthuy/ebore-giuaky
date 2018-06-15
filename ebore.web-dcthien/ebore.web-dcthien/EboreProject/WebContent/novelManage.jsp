@@ -121,10 +121,10 @@
 											<!-- 												aria-controls="dataTables-example" rowspan="1" colspan="1" -->
 											<!-- 												aria-label="Tác Giả: activate to sort column ascending" -->
 											<!-- 												style="width: 141px;">Sửa</th> -->
-											<!-- 											<th class="sorting" tabindex="0" -->
-											<!-- 												aria-controls="dataTables-example" rowspan="1" colspan="1" -->
-											<!-- 												aria-label="Tác Giả: activate to sort column ascending" -->
-											<!-- 												style="width: 141px;">Xóa</th> -->
+																						<th class="sorting" tabindex="0"
+																							aria-controls="dataTables-example" rowspan="1" colspan="1"
+																							aria-label="Tác Giả: activate to sort column ascending"
+																							style="width: 141px;">Xóa</th>
 										</tr>
 									</thead>
 									<tbody>
